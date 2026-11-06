@@ -40,6 +40,16 @@ export {
     type ProviderProfile,
 } from "./provider-profile";
 export {
+    activeSessionSchema,
+    authSessionSchema,
+    sessionDeviceSourceSchema,
+    sessionSourceSchema,
+    type ActiveSession,
+    type AuthSession,
+    type SessionDeviceSource,
+    type SessionSource,
+} from "./session";
+export {
     completeIconUploadResultSchema,
     firebasePhotoResultSchema,
     iconFileValidationErrorSchema,
