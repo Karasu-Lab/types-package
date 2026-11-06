@@ -12,6 +12,12 @@ export {
 } from "./account";
 export { apiErrorBodySchema, type ApiErrorBody } from "./error";
 export { appFlagsSchema, type AppFlags } from "./flags";
+export {
+    githubRepositorySchema,
+    githubUserSchema,
+    type GitHubRepository,
+    type GitHubUser,
+} from "./github";
 export { localeSchema, locales, type Locale } from "./locale";
 export {
     oauthClientCreatedSchema,
