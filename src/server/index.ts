@@ -28,6 +28,14 @@ export {
 } from "./errors";
 export { flagResponseSchema, type FlagResponse } from "./flags";
 export {
+    avatarUserSchema,
+    deviceSessionAvatarEntrySchema,
+    userinfoAvatarClaimsSchema,
+    type AvatarUser,
+    type DeviceSessionAvatarEntry,
+    type UserinfoAvatarClaims,
+} from "./profile-avatar";
+export {
     firebaseUserInputSchema,
     microsoftTokenResponseSchema,
     minecraftLoginResponseSchema,
@@ -57,14 +65,6 @@ export {
     type XboxToken,
     type XboxTokenResponse,
 } from "./provider-profiles";
-export {
-    avatarUserSchema,
-    deviceSessionAvatarEntrySchema,
-    userinfoAvatarClaimsSchema,
-    type AvatarUser,
-    type DeviceSessionAvatarEntry,
-    type UserinfoAvatarClaims,
-} from "./profile-avatar";
 export {
     signedAuthRequestOptionsSchema,
     signedAuthRequestSchema,
