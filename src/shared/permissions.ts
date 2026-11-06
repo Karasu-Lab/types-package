@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const permissionSummarySchema = z.object({
     publicId: z.string(),
-    numericId: z.number(),
+    operation: z.string(),
     resource: z.string(),
     action: z.string(),
 });
