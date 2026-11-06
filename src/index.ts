@@ -1,2 +1,2 @@
-export type { NodeEnv } from "./env";
-export { locales, type Locale } from "./locale";
+export * from "./shared/index";
+export type { NodeEnv } from "./server/env";
