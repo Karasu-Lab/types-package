@@ -31,7 +31,7 @@ export const authSessionSchema = z.object({
 export type AuthSession = z.infer<typeof authSessionSchema>;
 
 export const activeSessionSchema = authSessionSchema.extend({
-    source: sessionSourceSchema,
+    source: sessionSourceSchema.nullable(),
     current: z.boolean(),
 });
 
