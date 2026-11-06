@@ -1,10 +1,10 @@
 export {
     DEVICE_CODE_GRANT_TYPE,
-    oauthClientType,
-    oauthClientIsPublic,
     authorizedAppSchema,
-    type AuthorizedApp,
-    permissionSectionSchema,
-    type PermissionSection,
     groupScopesBySection,
+    oauthClientIsPublic,
+    oauthClientType,
+    permissionSectionSchema,
+    type AuthorizedApp,
+    type PermissionSection,
 } from "./oauth-client";
