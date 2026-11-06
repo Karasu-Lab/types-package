@@ -8,3 +8,7 @@ export {
     type AuthorizedApp,
     type PermissionSection,
 } from "./oauth-client";
+export {
+    pendingAddAccountSchema,
+    type PendingAddAccount,
+} from "./pending-add-account";

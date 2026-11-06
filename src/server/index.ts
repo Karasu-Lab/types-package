@@ -1,9 +1,12 @@
 export {
     appAuthConfigSchema,
     appRegistrationSchema,
+    appTokenPayloadSchema,
+    oauthTokenClaimsSchema,
     type AppAuthConfig,
     type AppRegistration,
     type AppTokenPayload,
+    type OAuthTokenClaims,
 } from "./app-auth";
 export {
     cdnFileRowSchema,
@@ -26,20 +29,42 @@ export {
 export { flagResponseSchema, type FlagResponse } from "./flags";
 export {
     firebaseUserInputSchema,
+    microsoftTokenResponseSchema,
+    minecraftLoginResponseSchema,
+    minecraftProfileResponseSchema,
     minecraftProfileSchema,
     rateLimitVerdictSchema,
+    xboxErrorResponseSchema,
     xboxLinkExchangeSchema,
+    xboxLinkStatePayloadSchema,
     xboxLinkTokensSchema,
+    xboxProfileResponseSchema,
     xboxProfileSchema,
+    xboxTokenResponseSchema,
     xboxTokenSchema,
     type FirebaseUserInput,
+    type MicrosoftTokenResponse,
+    type MinecraftLoginResponse,
     type MinecraftProfile,
+    type MinecraftProfileResponse,
     type RateLimitVerdict,
+    type XboxErrorResponse,
     type XboxLinkExchange,
+    type XboxLinkStatePayload,
     type XboxLinkTokens,
     type XboxProfile,
+    type XboxProfileResponse,
     type XboxToken,
+    type XboxTokenResponse,
 } from "./provider-profiles";
+export {
+    avatarUserSchema,
+    deviceSessionAvatarEntrySchema,
+    userinfoAvatarClaimsSchema,
+    type AvatarUser,
+    type DeviceSessionAvatarEntry,
+    type UserinfoAvatarClaims,
+} from "./profile-avatar";
 export {
     signedAuthRequestOptionsSchema,
     signedAuthRequestSchema,
