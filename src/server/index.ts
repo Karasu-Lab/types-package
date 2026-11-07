@@ -21,6 +21,7 @@ export { nodeEnvSchema, type NodeEnv } from "./env";
 export {
     BadRequestError,
     HttpError,
+    Issue,
     NotFoundError,
     RateLimitedError,
     UnauthorizedError,
