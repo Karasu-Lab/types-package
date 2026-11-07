@@ -15,13 +15,13 @@ export const apiKeySummarySchema = z.object({
     start: z.string().nullable(),
     createdAt: z.string(),
     lastRequest: z.string().nullable(),
-    permissions: z.array(permissionSummarySchema),
 });
 
 export type ApiKeySummary = z.infer<typeof apiKeySummarySchema>;
 
 export const apiKeyCreatedSchema = apiKeySummarySchema.extend({
     key: z.string(),
+    permissions: z.array(permissionSummarySchema),
 });
 
 export type ApiKeyCreated = z.infer<typeof apiKeyCreatedSchema>;
