@@ -25,14 +25,23 @@ export function oauthClientIsPublic(
     );
 }
 
-export const authorizedAppSchema = z.object({
+export const authorizedAppSummarySchema = z.object({
     id: z.string(),
     clientId: z.string(),
     clientName: z.string().optional(),
-    logoUri: z.string().optional(),
-    scopes: z.array(z.string()),
     createdAt: z.string(),
 });
+
+export type AuthorizedAppSummary = z.infer<typeof authorizedAppSummarySchema>;
+
+export const authorizedAppDetailSchema = authorizedAppSummarySchema.extend({
+    logoUri: z.string().optional(),
+    scopes: z.array(z.string()),
+});
+
+export type AuthorizedAppDetail = z.infer<typeof authorizedAppDetailSchema>;
+
+export const authorizedAppSchema = authorizedAppDetailSchema;
 
 export type AuthorizedApp = z.infer<typeof authorizedAppSchema>;
 
