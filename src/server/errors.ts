@@ -1,14 +1,32 @@
-import { apiErrorBodySchema } from "../shared/error";
+import { apiErrorBodySchema, type IssueData } from "../shared/error";
+
+export class Issue {
+    readonly code: string;
+    readonly path: (string | number)[];
+    readonly message: string;
+
+    constructor(code: string, path: (string | number)[], message: string) {
+        this.code = code;
+        this.path = path;
+        this.message = message;
+    }
+
+    toJSON(): IssueData {
+        return { code: this.code, path: this.path, message: this.message };
+    }
+}
 
 export class HttpError extends Error {
     readonly status: number;
     readonly body: Record<string, unknown>;
     readonly headers?: Record<string, string>;
+    readonly issues: Issue[];
 
     constructor(
         status: number,
         body: Record<string, unknown>,
         headers?: Record<string, string>,
+        issues: Issue[] = [],
     ) {
         const message = apiErrorBodySchema.safeParse(body);
         super(message.success ? message.data.error : `HTTP ${status}`);
@@ -16,6 +34,7 @@ export class HttpError extends Error {
         this.status = status;
         this.body = body;
         this.headers = headers;
+        this.issues = issues;
     }
 }
 
