@@ -1,3 +1,4 @@
+import type { ZodError } from "zod";
 import { apiErrorBodySchema, type IssueData } from "../shared/error";
 
 export class Issue {
@@ -9,6 +10,19 @@ export class Issue {
         this.code = code;
         this.path = path;
         this.message = message;
+    }
+
+    static fromZodError(error: ZodError): Issue[] {
+        return error.issues.map(
+            (issue) =>
+                new Issue(
+                    issue.code,
+                    issue.path.map((segment) =>
+                        typeof segment === "symbol" ? String(segment) : segment,
+                    ),
+                    issue.message,
+                ),
+        );
     }
 
     toJSON(): IssueData {
