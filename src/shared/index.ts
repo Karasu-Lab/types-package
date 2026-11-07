@@ -10,7 +10,12 @@ export {
     type SessionTokenBody,
     type SessionUser,
 } from "./account";
-export { apiErrorBodySchema, type ApiErrorBody } from "./error";
+export {
+    apiErrorBodySchema,
+    issueSchema,
+    type ApiErrorBody,
+    type IssueData,
+} from "./error";
 export { appFlagsSchema, type AppFlags } from "./flags";
 export {
     githubRepositorySchema,
