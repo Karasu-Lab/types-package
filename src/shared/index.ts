@@ -35,12 +35,18 @@ export {
 } from "./oauth-client";
 export {
     apiKeyCreatedSchema,
+    apiKeyDetailSchema,
     apiKeySummarySchema,
     permissionSummarySchema,
     type ApiKeyCreated,
+    type ApiKeyDetail,
     type ApiKeySummary,
     type PermissionSummary,
 } from "./permissions";
+export {
+    decodePermissionBitmask,
+    encodePermissionBitmask,
+} from "./permission-bitmask";
 export {
     providerProfileSchema,
     type ProviderProfile,
