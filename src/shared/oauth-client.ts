@@ -40,6 +40,7 @@ export type OAuthClientInfo = z.infer<typeof oauthClientInfoSchema>;
 
 export const oauthClientInfoResponseSchema = oauthClientInfoSchema.extend({
     client_secret: z.string().optional(),
+    scope_bitmask: z.string().optional(),
 });
 
 export type OAuthClientInfoResponse = z.infer<
