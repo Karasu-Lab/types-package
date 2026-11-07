@@ -72,6 +72,10 @@ export {
     type SignedAuthRequestOptions,
 } from "./signed-request";
 export {
+    signingKeyMaterialResponseSchema,
+    type SigningKeyMaterialResponse,
+} from "./signing-key";
+export {
     clientUploadIntentPayloadSchema,
     signedUploadIntentSchema,
     type ClientUploadIntentPayload,
