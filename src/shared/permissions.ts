@@ -25,3 +25,9 @@ export const apiKeyCreatedSchema = apiKeySummarySchema.extend({
 });
 
 export type ApiKeyCreated = z.infer<typeof apiKeyCreatedSchema>;
+
+export const apiKeyDetailSchema = apiKeySummarySchema.extend({
+    permissions_bitmask: z.string(),
+});
+
+export type ApiKeyDetail = z.infer<typeof apiKeyDetailSchema>;
