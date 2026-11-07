@@ -34,6 +34,10 @@ export {
     type UpsertOAuthClientInfoBody,
 } from "./oauth-client";
 export {
+    decodePermissionBitmask,
+    encodePermissionBitmask,
+} from "./permission-bitmask";
+export {
     apiKeyCreatedSchema,
     apiKeyDetailSchema,
     apiKeySummarySchema,
@@ -43,10 +47,6 @@ export {
     type ApiKeySummary,
     type PermissionSummary,
 } from "./permissions";
-export {
-    decodePermissionBitmask,
-    encodePermissionBitmask,
-} from "./permission-bitmask";
 export {
     providerProfileSchema,
     type ProviderProfile,

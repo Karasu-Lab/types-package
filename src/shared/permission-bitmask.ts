@@ -1,4 +1,7 @@
-export function encodePermissionBitmask(catalog: readonly string[], selected: Iterable<string>): string {
+export function encodePermissionBitmask(
+    catalog: readonly string[],
+    selected: Iterable<string>,
+): string {
     const chosen = new Set(selected);
     let bits = 0n;
     catalog.forEach((entry, index) => {
@@ -7,7 +10,10 @@ export function encodePermissionBitmask(catalog: readonly string[], selected: It
     return bits.toString();
 }
 
-export function decodePermissionBitmask(catalog: readonly string[], bitmask: string): string[] {
+export function decodePermissionBitmask(
+    catalog: readonly string[],
+    bitmask: string,
+): string[] {
     let bits: bigint;
     try {
         bits = BigInt(bitmask);
