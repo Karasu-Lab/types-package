@@ -20,5 +20,7 @@ export function decodePermissionBitmask(
     } catch {
         return [];
     }
-    return catalog.filter((_, index) => ((bits >> BigInt(index)) & BigInt(1)) === BigInt(1));
+    return catalog.filter(
+        (_, index) => ((bits >> BigInt(index)) & BigInt(1)) === BigInt(1),
+    );
 }
