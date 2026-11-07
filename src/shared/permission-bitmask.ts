@@ -3,9 +3,9 @@ export function encodePermissionBitmask(
     selected: Iterable<string>,
 ): string {
     const chosen = new Set(selected);
-    let bits = 0n;
+    let bits = BigInt(0);
     catalog.forEach((entry, index) => {
-        if (chosen.has(entry)) bits |= 1n << BigInt(index);
+        if (chosen.has(entry)) bits |= BigInt(1) << BigInt(index);
     });
     return bits.toString();
 }
@@ -20,5 +20,5 @@ export function decodePermissionBitmask(
     } catch {
         return [];
     }
-    return catalog.filter((_, index) => ((bits >> BigInt(index)) & 1n) === 1n);
+    return catalog.filter((_, index) => ((bits >> BigInt(index)) & BigInt(1)) === BigInt(1));
 }
