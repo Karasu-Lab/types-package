@@ -4,18 +4,20 @@ export const sessionSourceSchema = z.string().min(1);
 
 export type SessionSource = z.infer<typeof sessionSourceSchema>;
 
-export function buildSessionSource(providerId: string, sessionId: string): SessionSource {
-    return `${providerId}-${sessionId}`;
-}
+export const sessionSourceBuildSchema = z
+    .object({ providerId: z.string().min(1), sessionId: z.string().min(1) })
+    .transform(({ providerId, sessionId }): SessionSource => `${providerId}-${sessionId}`);
 
-export function parseSessionSource(
-    source: string,
-    sessionId: string,
-): { providerId: string; sessionId: string } | null {
-    const suffix = `-${sessionId}`;
-    if (!source.endsWith(suffix) || source.length === suffix.length) return null;
-    return { providerId: source.slice(0, -suffix.length), sessionId };
-}
+export const sessionSourceParseSchema = z
+    .object({ source: sessionSourceSchema, sessionId: z.string().min(1) })
+    .transform(({ source, sessionId }, ctx) => {
+        const suffix = `-${sessionId}`;
+        if (!source.endsWith(suffix) || source.length === suffix.length) {
+            ctx.issues.push({ code: "custom", message: "The source was not built for this session", input: source });
+            return z.NEVER;
+        }
+        return { providerId: source.slice(0, -suffix.length), sessionId };
+    });
 
 export const sessionWithSourceSchema = z.object({
     session: z.looseObject({ id: z.string().min(1) }),

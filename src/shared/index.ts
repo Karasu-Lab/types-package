@@ -107,9 +107,9 @@ export {
 export {
     activeSessionSchema,
     authSessionSchema,
-    buildSessionSource,
-    parseSessionSource,
     sessionDeviceSourceSchema,
+    sessionSourceBuildSchema,
+    sessionSourceParseSchema,
     sessionSourceSchema,
     sessionWithSourceSchema,
     type ActiveSession,
