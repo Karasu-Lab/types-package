@@ -100,7 +100,9 @@ export {
 } from "./permissions";
 export {
     providerProfileSchema,
+    ProviderStreamEvent,
     type ProviderProfile,
+    type ProviderStreamEvents,
 } from "./provider-profile";
 export {
     activeSessionSchema,
