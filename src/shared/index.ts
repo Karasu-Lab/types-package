@@ -99,8 +99,8 @@ export {
     type PermissionSummary,
 } from "./permissions";
 export {
-    providerProfileSchema,
     ProviderStreamEvent,
+    providerProfileSchema,
     type ProviderProfile,
     type ProviderStreamEvents,
 } from "./provider-profile";
