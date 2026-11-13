@@ -107,12 +107,16 @@ export {
 export {
     activeSessionSchema,
     authSessionSchema,
+    buildSessionSource,
+    parseSessionSource,
     sessionDeviceSourceSchema,
     sessionSourceSchema,
+    sessionWithSourceSchema,
     type ActiveSession,
     type AuthSession,
     type SessionDeviceSource,
     type SessionSource,
+    type SessionWithSource,
 } from "./session";
 export {
     generateSigningKeyRequestSchema,
