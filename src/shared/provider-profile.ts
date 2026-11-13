@@ -7,3 +7,14 @@ export const providerProfileSchema = z.object({
 });
 
 export type ProviderProfile = z.infer<typeof providerProfileSchema>;
+
+export enum ProviderStreamEvent {
+    Profile = "profile",
+}
+
+export type ProviderStreamEvents = {
+    [ProviderStreamEvent.Profile]: {
+        providerId: string;
+        profile: ProviderProfile | null;
+    };
+};
