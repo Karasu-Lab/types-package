@@ -8,6 +8,9 @@ export const authConfigSchema = z.object({
     }),
     trustedOrigins: z.array(z.string()),
     turnstileHostnames: z.array(z.string()),
+    batchWorks: z.object({
+        maxConcurrency: z.number().int().positive(),
+    }),
 });
 
 export type AuthConfig = z.infer<typeof authConfigSchema>;
