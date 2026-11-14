@@ -133,8 +133,16 @@ export {
     type SigningKeyStatusResponse,
 } from "./signing-key";
 export {
+    ADMIN_TENANT_TYPE,
+    assignTenantTypeRequestSchema,
+    assignTenantTypeResponseSchema,
+    createTenantBodySchema,
     createTenantInvitationRequestSchema,
     createTenantOrganizationRequestSchema,
+    tenantTypeSchema,
+    type AssignTenantTypeRequest,
+    type AssignTenantTypeResponse,
+    type TenantType,
     tenantInvitationSchema,
     tenantInvitationStatusSchema,
     tenantMemberRoleSchema,
