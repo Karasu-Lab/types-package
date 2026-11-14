@@ -50,7 +50,7 @@ export type AssignTenantTypeResponse = z.infer<
     typeof assignTenantTypeResponseSchema
 >;
 
-export const tenantMemberRoleSchema =z.enum(["owner", "admin", "member"]);
+export const tenantMemberRoleSchema = z.enum(["owner", "admin", "member"]);
 
 export type TenantMemberRole = z.infer<typeof tenantMemberRoleSchema>;
 
