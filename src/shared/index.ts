@@ -105,13 +105,6 @@ export {
     type ProviderStreamEvents,
 } from "./provider-profile";
 export {
-    activeSessionSchema,
-    authSessionSchema,
-    sessionDeviceSourceSchema,
-    sessionSourceBuildSchema,
-    sessionSourceParseSchema,
-    sessionSourceSchema,
-    sessionWithSourceSchema,
     type ActiveSession,
     type AuthSession,
     type SessionDeviceSource,
