@@ -133,6 +133,10 @@ export {
     type SigningKeyStatusResponse,
 } from "./signing-key";
 export {
+    ADMIN_TENANT_TYPE,
+    assignTenantTypeRequestSchema,
+    assignTenantTypeResponseSchema,
+    createTenantBodySchema,
     createTenantInvitationRequestSchema,
     createTenantOrganizationRequestSchema,
     tenantInvitationSchema,
@@ -140,6 +144,9 @@ export {
     tenantMemberRoleSchema,
     tenantMemberSchema,
     tenantOrganizationSchema,
+    tenantTypeSchema,
+    type AssignTenantTypeRequest,
+    type AssignTenantTypeResponse,
     type CreateTenantInvitationRequest,
     type CreateTenantOrganizationRequest,
     type TenantInvitation,
@@ -147,6 +154,7 @@ export {
     type TenantMember,
     type TenantMemberRole,
     type TenantOrganization,
+    type TenantType,
 } from "./tenant";
 export {
     completeIconUploadResultSchema,

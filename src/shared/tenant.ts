@@ -17,6 +17,39 @@ export type CreateTenantOrganizationRequest = z.infer<
     typeof createTenantOrganizationRequestSchema
 >;
 
+export const ADMIN_TENANT_TYPE = "admin";
+
+export const tenantTypeSchema = z
+    .string()
+    .trim()
+    .min(1)
+    .max(64)
+    .regex(/^[a-z0-9][a-z0-9-]*$/);
+
+export type TenantType = z.infer<typeof tenantTypeSchema>;
+
+export const createTenantBodySchema = z.object({
+    type: tenantTypeSchema,
+});
+
+export const assignTenantTypeRequestSchema = z.object({
+    userId: z.string().min(1),
+    type: tenantTypeSchema,
+});
+
+export type AssignTenantTypeRequest = z.infer<
+    typeof assignTenantTypeRequestSchema
+>;
+
+export const assignTenantTypeResponseSchema = z.object({
+    tenantId: z.string(),
+    type: tenantTypeSchema,
+});
+
+export type AssignTenantTypeResponse = z.infer<
+    typeof assignTenantTypeResponseSchema
+>;
+
 export const tenantMemberRoleSchema = z.enum(["owner", "admin", "member"]);
 
 export type TenantMemberRole = z.infer<typeof tenantMemberRoleSchema>;
