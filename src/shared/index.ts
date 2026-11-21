@@ -173,7 +173,12 @@ export {
     type VerifiedUpload,
 } from "./upload";
 export {
-    DEFAULT_VERSION_NAMING_PATTERN,
+    updateUserProfileRequestSchema,
+    userProfileSchema,
+    type UpdateUserProfileRequest,
+    type UserProfile,
+} from "./user-profile";
+export {
     versionNamingDeclarationSchema,
     versionNamingPatternSchema,
     type VersionNamingDeclaration,
