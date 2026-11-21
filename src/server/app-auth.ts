@@ -6,6 +6,7 @@ export const appAuthConfigSchema = z.object({
         .startsWith("/")
         .default("/.well-known/app-public-key"),
     resolutionTtlMs: z.number().int().positive().default(60_000),
+    local: z.boolean().default(false),
 });
 
 export type AppAuthConfig = z.infer<typeof appAuthConfigSchema>;

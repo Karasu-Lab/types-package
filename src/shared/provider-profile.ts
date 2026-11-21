@@ -4,6 +4,7 @@ export const providerProfileSchema = z.object({
     name: z.string().nullable(),
     email: z.string().nullable(),
     avatarUrl: z.string().nullable(),
+    accountId: z.string().nullable().optional(),
 });
 
 export type ProviderProfile = z.infer<typeof providerProfileSchema>;
