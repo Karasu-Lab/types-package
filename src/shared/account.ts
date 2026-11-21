@@ -23,6 +23,7 @@ export const sessionUserSchema = z.object({
     email: z.string().nullable(),
     name: z.string().nullable(),
     image: z.string().nullable(),
+    emailVerified: z.boolean().optional(),
 });
 
 export type SessionUser = z.infer<typeof sessionUserSchema>;
