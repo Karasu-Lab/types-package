@@ -99,16 +99,16 @@ export {
     type PermissionSummary,
 } from "./permissions";
 export {
+    ProviderStreamClientsEvent,
+    type ProviderClient,
+    type ProviderStreamEventsWithClients,
+} from "./provider-clients";
+export {
     ProviderStreamEvent,
     providerProfileSchema,
     type ProviderProfile,
     type ProviderStreamEvents,
 } from "./provider-profile";
-export {
-    ProviderStreamClientsEvent,
-    type ProviderClient,
-    type ProviderStreamEventsWithClients,
-} from "./provider-clients";
 export {
     type ActiveSession,
     type AuthSession,
