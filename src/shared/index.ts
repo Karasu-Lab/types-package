@@ -105,6 +105,11 @@ export {
     type ProviderStreamEvents,
 } from "./provider-profile";
 export {
+    ProviderStreamClientsEvent,
+    type ProviderClient,
+    type ProviderStreamEventsWithClients,
+} from "./provider-clients";
+export {
     type ActiveSession,
     type AuthSession,
     type SessionDeviceSource,
