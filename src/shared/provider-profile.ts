@@ -9,12 +9,22 @@ export const providerProfileSchema = z.object({
 
 export type ProviderProfile = z.infer<typeof providerProfileSchema>;
 
+export interface ProviderClient {
+    providerId: string;
+    clientId: string | null;
+    iconPath: string;
+}
+
 export enum ProviderStreamEvent {
+    Clients = "clients",
     Profile = "profile",
     LinkState = "link-state",
 }
 
 export type ProviderStreamEvents = {
+    [ProviderStreamEvent.Clients]: {
+        clients: ProviderClient[];
+    };
     [ProviderStreamEvent.Profile]: {
         providerId: string;
         profile: ProviderProfile | null;
