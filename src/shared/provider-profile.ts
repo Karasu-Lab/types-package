@@ -11,11 +11,17 @@ export type ProviderProfile = z.infer<typeof providerProfileSchema>;
 
 export enum ProviderStreamEvent {
     Profile = "profile",
+    LinkState = "link-state",
 }
 
 export type ProviderStreamEvents = {
     [ProviderStreamEvent.Profile]: {
         providerId: string;
         profile: ProviderProfile | null;
+    };
+    [ProviderStreamEvent.LinkState]: {
+        providerId: string;
+        providerUserId: string;
+        linkable: boolean;
     };
 };
